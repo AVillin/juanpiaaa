@@ -11,17 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        "/api":{
-            target:"http://localhost:5555",
-            host:"localhost:5555",
+        '/api':{
+            target:'https://webservice.juanpi.com',
+            host:'webservice.juanpi.com',
             changeOrigin:true,
-        },
-         "/v2":{ 
-            target: 'https://m.maizuo.com',
-            host: 'm.maizuo.com',
-            changeOrigin:true,
-          }
-
+        }
     },
 
     // Various Dev Server settings
