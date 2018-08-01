@@ -1,9 +1,4 @@
 <template>
-<<<<<<< HEAD
-	<div>
-		<router-link to="/reg">注册</router-link>
-		<router-link to="/login">登录</router-link>
-=======
 <div>
 	<header>
 		<div class="a">
@@ -53,7 +48,6 @@
 			</li>
 		
 		</ul>
->>>>>>> 5467b98f95b332af3a32d07a3d46292a9a374fc5
 	</div>
 
 	<div class="my">
