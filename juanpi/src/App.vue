@@ -1,5 +1,6 @@
 <template>
   <div id="app"> 
+    <router-view></router-view>
     <ul class="appul">
       <router-link to="/home" tag="li" activeClass="appul1">
         <i class="iconfont icon-home"></i>
@@ -18,7 +19,6 @@
           <span>我的</span>
         </router-link>
     </ul>
-    <router-view></router-view>
   </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
   *{
     padding:0;
     margin:0;
+  }
+  input{
+    outline: none
   }
   .appul{
     display: flex;

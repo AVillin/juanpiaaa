@@ -1,6 +1,7 @@
 <template>
 	<div>
-		my
+		<router-link to="/reg">注册</router-link>
+		<router-link to="/login">登录</router-link>
 	</div>
 </template>
 
