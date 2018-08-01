@@ -3,17 +3,20 @@
     <ul class="appul">
       <router-link to="/home" tag="li" activeClass="appul1">
         <i class="iconfont icon-home"></i>
-      首页</router-link>
+        <span>首页</span>
+    </router-link>
       <router-link to="/classify" tag="li" activeClass="appul1">
          <i class="iconfont icon-leimupinleifenleileibie"></i>
-      分类</router-link>
+      <span>分类</span>
+    </router-link>
       <router-link to="/shoppingcart" tag="li" activeClass="appul1">
          <i class="iconfont icon-gouwuche"></i>
-        购物车</router-link>
+        <span>购物车</span>
+        </router-link>
       <router-link to="/my" tag="li" activeClass="appul1">
          <i class="iconfont icon-wodedangxuan1-copy"></i>
-
-      我的</router-link>
+          <span>我的</span>
+        </router-link>
     </ul>
     <router-view></router-view>
   </div>
@@ -27,28 +30,39 @@ export default {
 </script>
 
 <style lang="scss">
-*{
-  padding:0;
-  margin:0;
-}
+  *{
+    padding:0;
+    margin:0;
+  }
   .appul{
     display: flex;
-    bottom:0;
+    bottom:0px;
     list-style: none;
     width:100%;
     position: fixed;
-    font-size: 12px
-    
+    font-size: 12px;
+    color:#ccc
   }
   li{
     width:25%;
     text-align: center;
-    line-height: 50px;
-    
+    .iconfont{
+      font-size: 25px;
+      display: block;
+      margin-top: 5px
+    }
+    span{
+    display: block;
+    line-height:20px;
+    color:#000
+  }
   }
   .appul1{
-    background: red;
-    
+    color:red;    
     height: 50px;
+    span{
+      color:red
+    }
   }
+
 </style>
