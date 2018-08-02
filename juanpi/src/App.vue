@@ -41,7 +41,8 @@ export default {
     width:100%;
     position: fixed;
     font-size: 12px;
-    color:#ccc
+    color:#ccc;
+    background: #fff;
   }
   li{
     width:25%;
