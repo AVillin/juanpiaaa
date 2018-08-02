@@ -1,5 +1,5 @@
 <template>
-<<<<<<< HEAD
+
 <div>
 	<header>
 		<div class="a">
@@ -77,8 +77,7 @@
 	</div>
 		
 </div>
-=======
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 	
 </template>
 

@@ -2,17 +2,17 @@
 	<div>
 
 	<!--  搜索栏  -->
-<<<<<<< HEAD
+
 		<header id="header">
-=======
+
 	<header id="header">
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 			<a href="" class="search">
 				<i class="iconfont icon-search1"></i>
-				<input type="text" placeholder="         搜索">
+				<input type="text" placeholder="搜索">
 			</a>
 				<i class="iconfont icon-search icon1"></i>
-<<<<<<< HEAD
+
 		</header>
 		
 	<!-- 轮播图   -->
@@ -21,7 +21,6 @@
 		  			<a href=""><img :src="data.pic" alt=""></a>
 		  </swipe-item>
 		</swipe>
-=======
 	</header>
 		
 	<!-- 轮播图   -->
@@ -31,34 +30,26 @@
 		  </swipe-item>
 	</swipe>
 
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 	<!-- 导航栏 -->
 	<ul id="mav">
 		<li v-for="data in mavlist"><a href=""><img :src="data.child[0].pic" alt=""></a></li>
 		
 	</ul>
-<<<<<<< HEAD
-=======
 
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
 	<!-- 动态图 -->
 	<div id="pic">
 		<a href="">
 			<img src="../assets/ban.gif" alt="">
 		</a>
 	</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
 	<!-- 口碑图片 -->
 	<div id="good">
 			<img src="../assets/koubei.png" alt="">
 	</div>
 
-<<<<<<< HEAD
 
-=======
 	<!-- 专场与精品 -->
 	<div id="list">
 		<!-- 专场1 -->
@@ -97,7 +88,6 @@
 			</div>
 		</div>
 	</div>
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
 	</div>
 </template>
 
@@ -111,17 +101,16 @@
 		name:"home",
 		data(){
 			return{
-<<<<<<< HEAD
+
 				slidelist:[],
-				mavlist:[]
-=======
+				mavlist:[],
 				liL:true,
 				liR:true,
 				slidelist:[],
 				mavlist:[],
 				listL:[],
 				listR:[]
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 			}
 		},
 		components:{
@@ -137,11 +126,11 @@
 			axios.get("/api/getIndexFirstPaintInfo?cid=&zy_ids=p8_c4_l4_1456_51_1406_18_1371_5_128&app_name=zhe&app_version=&platform=&catname=newest_zhe").then(res=>{
 				console.log("模块",res.data)
 				this.mavlist=res.data.adsInfo.block[0].multi_block[0].data
-<<<<<<< HEAD
+
 
 
 			})
-=======
+
 			});
 			axios.get("/api/getIndexNavSkip?page=1&zy_ids=p8_c4_l4_1456_1186_1220_1406_1184_1217_1371_5_128_106_51_18_1391&app_name=zhe&catname=newest_zhe").then(res=>{
 				console.log('list',res.data)
@@ -154,7 +143,7 @@
 		},
 		methods:{
 
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 		}
 	}
 	
@@ -163,24 +152,24 @@
 
 <style scoped lang="scss">
 	div{
-<<<<<<< HEAD
+
 		background: #eee
-=======
+
 		background: #f4f4f8
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 	}
 #header{
 	width: 100%;
 	height: 36px;
 	display: flex;
-<<<<<<< HEAD
+
 	margin-bottom: 5px;
 	margin-top: 5px;
-=======
+
 	padding-bottom: 5px;
 	margin-top: 5px;
 	background: #fff;
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 	.iconfont{
 		font-size:23px;
 		color: rgb(153, 153, 153);
@@ -268,9 +257,9 @@
 		margin-bottom: 5px;
 	}
 }
-<<<<<<< HEAD
 
-=======
+
+
 #list{
 	.classfiy{
 		ul{
@@ -388,7 +377,7 @@
 	}
 	}
 }
->>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
+
 
 	
 </style>
