@@ -71,9 +71,9 @@
 	</div>
 
 	<div class="footer">
-		<router-link to="" tag="p">返回首页</router-link>
-		<router-link to="" tag="p">客户端</router-link>
-		<router-link to="" tag="p">电脑版</router-link>
+		<router-link to="/home" tag="p">返回首页</router-link>
+		<router-link to="http://android.myapp.com/myapp/detail.htm?apkName=com.juanpi.ui&ADTAG=mobile" tag="p">客户端</router-link>
+		<router-link to="https://www.juanpi.com/" tag="p">电脑版</router-link>
 	</div>
 		
 </div>
@@ -116,6 +116,6 @@
 	.server .p1{border-bottom: 1px solid #ccc}
 	.server .p2{border-bottom: 8px solid #eee}
 
-	.footer{display:flex;overflow: hidden;margin-bottom: 50px}
+	.footer{display:flex;overflow: hidden;margin-bottom: 50px;line-height: 50px}
 	.footer p{flex:1;text-align: center}
 </style>
