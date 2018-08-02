@@ -28,7 +28,6 @@
 				}
 				axios.post("/api/login",aa).then((res)=>{
 					if(res.data===1){
-						console.log('asda')
 						window.location.href="/#/home"
 					}
 					
