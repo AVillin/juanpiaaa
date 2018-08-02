@@ -11,9 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+<<<<<<< HEAD
         "/api":{
             target:"http://172.18.12.27:5555",
             host:"172.18.12.27:5555",
+=======
+        '/api':{
+            target:'https://webservice.juanpi.com',
+            host:'webservice.juanpi.com',
+>>>>>>> cd8f71d99f39af1a60d64285a4b1455913da4163
             changeOrigin:true,
         }
     },
