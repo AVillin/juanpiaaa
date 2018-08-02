@@ -15,13 +15,7 @@ module.exports = {
             target:"http://172.18.12.27:5555",
             host:"172.18.12.27:5555",
             changeOrigin:true,
-        },
-         "/v2":{ 
-            target: 'https://m.maizuo.com',
-            host: 'm.maizuo.com',
-            changeOrigin:true,
-          }
-
+        }
     },
 
     // Various Dev Server settings
