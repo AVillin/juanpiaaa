@@ -131,7 +131,6 @@
 
 			})
 
-			});
 			axios.get("/api/getIndexNavSkip?page=1&zy_ids=p8_c4_l4_1456_1186_1220_1406_1184_1217_1371_5_128_106_51_18_1391&app_name=zhe&catname=newest_zhe").then(res=>{
 				console.log('list',res.data)
 				this.listL=res.data.GoodsRes.goods
@@ -152,9 +151,6 @@
 
 <style scoped lang="scss">
 	div{
-
-		background: #eee
-
 		background: #f4f4f8
 
 	}
