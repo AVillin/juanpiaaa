@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Jsonp from 'vue-jsonp'
 
+Vue.use(Jsonp)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -1,57 +1,88 @@
 <template>
 	<div>
-		<div id="search-box">
-			<span><i class="iconfont icon-gouwuche"></i></span>
-			<input type="text" name="keyword" placeholder="搜索商品">
+		<navbar></navbar>
+		
+		<div id="catelist">
+			<ul id="one-list">
+				<li v-for="data,idx in datalist" @click="handleClick(idx)" :class="currentIndex==idx ? 'white' : ''">
+					{{data.name}}
+				</li>
+				<li class="lastchild"></li>
+			</ul>
+
+			<ul id="two-list">
+				<li v-for="data in list" @click="handleClick2(data.id)">
+					<img :src="'https://s2.juancdn.com' + data.icon"/>
+					<span>{{data.name}}</span>
+					<!-- <span>{{data.id}}</span> -->
+				</li>
+			</ul>
 		</div>
 		
-		<ul>
-			<router-link to="/classify/drag" tag="li" activeClass="active">女装</router-link>
-			<router-link to="/classify/menswear" tag="li" activeClass="active">男装</router-link>
-			<router-link to="/classify/baby" tag="li" activeClass="active">母婴</router-link>
-			<router-link to="/classify/shoe" tag="li" activeClass="active">鞋子</router-link>
-			<router-link to="/classify/bag" tag="li" activeClass="active">箱包</router-link>
-			
-		</ul>
-		<!-- <sidebar></sidebar> -->
-		<section>
-			<router-view></router-view>
-		</section>
-			
-
-
-
 	</div>
 </template>
 
 <script>
 
-// import sidebar from "./common/sidebar"
-// import mainbar from "./common/mainbar"
+	import navbar from "./common/navbar"
+
+	import axios from "axios"
+	import router from "../router"
 	export default{
 		data(){
 			return{
+				datalist:[],
+				list: [],
+				currentIndex:0
+			}
+		},
+		mounted(){
+			//https://m.juanpi.com/cate/catelist?pf=8&area=4&bi=222&dtype=jsonp&_=1533196608498&callback=jsonp1
+			
+			this.$jsonp('https://m.juanpi.com/cate/catelist?pf=8&area=4&bi=222&dtype=jsonp&_=1533196608498&callback=jsonp1',{}).then(res=>{
+				console.log(res);
+				this.datalist = res
+				this.list = this.datalist[0].secondCateList;
+			})
+		},
+		methods :{
+			handleClick(idx){
+				// console.log(idx)
+				this.list = this.datalist[idx].secondCateList
+				console.log(this.list)
+				this.currentIndex = idx
+				console.log(idx)
+			},
+
+			handleClick2(ddd){
+				router.push(`/detail/${ddd}`);
 
 			}
+		},
+		components:{
+			navbar
 		}
-		// components:{
-		// 	sidebar,
-		// 	mainbar
-		// }
 	}
 </script>
 
 <style scoped lang="sass">
-	nav{width: 100%; position: fixed; left: 0; top: 0;}
-	#search-box{height: 30px; line-height: 30px; margin: 10px; border: 1px solid #ccc; color: #ccc;}
-	#search-box span i{font-size: 20px; padding: 5px;}
-	#search-box input{outline: none; border:none;}
+
+	/* nav{width: 100%; position: fixed; left: 0; top: 0;} */
+	/* #all{display: flex; height: 100%; flex-direction:column; overflow: hidden;} */
+	
+
+	#catelist{width: 100%;}
+	#one-list{width: 25%; background-color: #f9f9f9; float: left;/*  padding-bottom: 100px; */}
+	#one-list li{width: 80%; height: 30px; line-height: 30px; text-align: left; border-bottom: 1px solid #f4f4f4; padding: 10px;font-size: 16px;}
+	#one-list .lastchild{border-bottom: none;}
 
 
-	ul{position: fixed; top: 55px; left: 0; width: 25%; background-color: #f9f9f9;}
-	li{width: 80%; height: 30px; line-height: 30px; text-align: left; border-bottom: 1px solid #f4f4f4; padding: 10px;}
-	.active{color: #f00; border-left: 2px solid #f00;padding-left: 8px; background-color: yellow;}
+	#two-list{width: 71%; float: right; padding-bottom: 100px;}
+	#two-list li{float: left; width: 33%; list-style: none;}
+	#two-list li img{width: 100%;}
+	#two-list li span{color: #666; font-size: 14px;}
 
-	section{ padding-left: 30%; padding-top: 10px;}
+
+	#one-list .white{ background-color: white; color: red; border-left: 2px solid #f00; padding-left: 8px;}
 
 </style>

@@ -10,7 +10,20 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api':{
+            target:'https://webservice.juanpi.com',
+            host:'webservice.juanpi.com',
+            changeOrigin:true,
+        },
+        '/cate':{
+            target:  'https://m.juanpi.com',
+            host:'m.juanpi.com',
+            changeOrigin:true,
+
+        }
+        //https://m.juanpi.com/cate/catelist?pf=8&area=4&bi=222&dtype=jsonp&_=1533196608498&callback=jsonp1
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
