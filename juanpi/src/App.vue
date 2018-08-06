@@ -42,7 +42,11 @@ export default {
     position: fixed;
     font-size: 12px;
     color:#ccc;
+
+    background:#fff;
+
     background: #fff;
+
   }
   li{
     width:25%;

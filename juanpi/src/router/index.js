@@ -4,8 +4,12 @@ import home from '../components/home'
 import classify from '../components/classify'
 import shoppingcart from '../components/shoppingcart'
 import my from '../components/my'
+
 import detail from '../components/detail'
 
+
+import my1 from "../components/my1"
+import order from "../components/order"
 
 Vue.use(Router)
 
@@ -28,8 +32,18 @@ export default new Router({
     	component:my
     },
     {
+
         path:'/detail/:ddd',
         component:detail
+    },
+    {
+
+        path:'/my1',
+        component:my1
+    },
+    {
+        path:'/order',
+        component:order
     }
     // {
     //     path:'*',

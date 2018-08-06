@@ -1,15 +1,14 @@
 <template>
-
 <div>
 	<header>
 		<div class="a">
 			<i class="iconfont icon-zuojiantou"></i>
 			<span>个人中心</span>
+			<a href="">退出</a>
 		</div>
 		<div class="b">
-			<router-link to="/reg" class="c">注册</router-link>
-			<span>|</span>
-			<router-link to="/login" class="d">登录</router-link>
+			<i class="iconfont icon-qunfenglianxiren"></i>
+			<p>用户名</p>
 		</div>
 	</header>
 
@@ -77,7 +76,6 @@
 	</div>
 		
 </div>
-
 	
 </template>
 
@@ -92,11 +90,15 @@
 	li{list-style: none}
 	html,body{height:100%;width:100%;}
 	header{height:150px;width:100%;background:url(../assets/bg.png) no-repeat;background-size:cover;color:#fff;font-size:22px;box-sizing:border-box;}
-	header .a{height:40%;width:100%;}
+
+	header .a{height:40%;width:100%; color:#fff;}
 	header .a i{float: left;height:40px;line-height: 40px;}
-	header .a span{width:90%;font-size:16px;text-align: center;float: left;height: 40px;line-height: 40px;}
+	header .a a{display: inline-block;font-size: 18px}
+	header .a span{width:80%;font-size:16px;text-align: center;float: left;height: 40px;line-height: 40px;}
 	header .a .iconfont{font-size: 22px;padding-left: 10px}
 	header .b{height:60%;width:100%;line-height:90px;text-align: center;display: flex;}
+	header .b i{font-size: 70px;padding-left: 30px}
+	header .b p{padding-left: 10px}
 	header .b .c,.d{width:50%;text-align: center}
 	
 	.ding{border-bottom: 1px solid #ccc;}

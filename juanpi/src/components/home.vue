@@ -2,12 +2,25 @@
 	<div>
 
 	<!--  搜索栏  -->
+
+		<header id="header">
+
 	<header id="header">
+
 			<a href="" class="search">
 				<i class="iconfont icon-search1"></i>
-				<input type="text" placeholder="         搜索">
+				<input type="text" placeholder="搜索">
 			</a>
 				<i class="iconfont icon-search icon1"></i>
+
+		</header>
+		
+	<!-- 轮播图   -->
+		<swipe class="my-swipe">
+		  <swipe-item class="slide1" v-for="data in slidelist" :key="data.id">
+		  			<a href=""><img :src="data.pic" alt=""></a>
+		  </swipe-item>
+		</swipe>
 	</header>
 		
 	<!-- 轮播图   -->
@@ -16,6 +29,7 @@
 		  			<a href=""><img :src="data.pic" alt=""></a>
 		  </swipe-item>
 	</swipe>
+
 
 	<!-- 导航栏 -->
 	<ul id="mav">
@@ -34,6 +48,7 @@
 	<div id="good">
 			<img src="../assets/koubei.png" alt="">
 	</div>
+
 
 	<!-- 专场与精品 -->
 	<div id="list">
@@ -76,6 +91,8 @@
 	</div>
 </template>
 
+
+</script>
 <script>
 	import axios from "axios"
 	require('vue-swipe/dist/vue-swipe.css');
@@ -84,12 +101,16 @@
 		name:"home",
 		data(){
 			return{
+
+				slidelist:[],
+				mavlist:[],
 				liL:true,
 				liR:true,
 				slidelist:[],
 				mavlist:[],
 				listL:[],
 				listR:[]
+
 			}
 		},
 		components:{
@@ -105,7 +126,11 @@
 			axios.get("/api/getIndexFirstPaintInfo?cid=&zy_ids=p8_c4_l4_1456_51_1406_18_1371_5_128&app_name=zhe&app_version=&platform=&catname=newest_zhe").then(res=>{
 				console.log("模块",res.data)
 				this.mavlist=res.data.adsInfo.block[0].multi_block[0].data
-			});
+
+
+
+			})
+
 			axios.get("/api/getIndexNavSkip?page=1&zy_ids=p8_c4_l4_1456_1186_1220_1406_1184_1217_1371_5_128_106_51_18_1391&app_name=zhe&catname=newest_zhe").then(res=>{
 				console.log('list',res.data)
 				this.listL=res.data.GoodsRes.goods
@@ -116,7 +141,7 @@
 			})
 		},
 		methods:{
-			
+
 		}
 	}
 	
@@ -126,14 +151,20 @@
 <style scoped lang="scss">
 	div{
 		background: #f4f4f8
+
 	}
 #header{
 	width: 100%;
 	height: 36px;
 	display: flex;
+
+	margin-bottom: 5px;
+	margin-top: 5px;
+
 	padding-bottom: 5px;
 	margin-top: 5px;
 	background: #fff;
+
 	.iconfont{
 		font-size:23px;
 		color: rgb(153, 153, 153);
@@ -221,6 +252,9 @@
 		margin-bottom: 5px;
 	}
 }
+
+
+
 #list{
 	.classfiy{
 		ul{
@@ -338,6 +372,7 @@
 	}
 	}
 }
+
 
 	
 </style>
